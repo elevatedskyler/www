@@ -91,6 +91,7 @@ export default function Header() {
 				style={{ opacity: titleOpacity }}
 			>
 				<h1>Skyler Riley</h1>
+				<h2>Software Consultant</h2>
 			</motion.div>
 		</div>
 	);

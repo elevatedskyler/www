@@ -52,47 +52,38 @@ export default function Header() {
 	const titleOpacity = useTransform(scrollY, [0, 300], [0, 1]);
 
 	return (
-		<div className="fixed top-0 w-full flex flex-col bg-transparent  z-10">
+		<div className="fixed top-0 w-full flex items-end justify-end bg-transparent z-10 p-3">
 			{/* Navigation that slides up/down */}
 			<motion.nav
-				className="flex max-w-md w-full text-xl p-3 transition-transform duration-300 ease-in-out"
+				className="max-w-md text-xl transition-transform duration-300 ease-in-out"
 				style={{ transform: navTransform }}
 			>
 				{/* Each link takes exactly 1/4 of the space */}
 				<Link
 					href="/about"
-					className="flex-1 text-center py-2 border-l-2 border-black  border-y-2 rounded-l-lg hover:font-semibold hover:bg-white transition-colors bg-white/50"
+					className="inline-block w-24 text-center py-2 border-l-2 border-black border-y-2 rounded-l-lg hover:bg-sky-500 hover:border-sky-800 hover:text-white transition-colors bg-white/50"
 				>
 					About
 				</Link>
 				<Link
 					href="/portfolio"
-					className="flex-1 text-center py-2 border-black  border-y-2 hover:font-semibold hover:bg-white transition-colors bg-white/50"
+					className="inline-block w-24 text-center py-2 border-black border-y-2  hover:bg-sky-500 hover:border-sky-800 hover:text-white transition-colors bg-white/50"
 				>
 					Portfolio
 				</Link>
 				<Link
 					href="/socials"
-					className="flex-1 text-center py-2 border-black border-y-2 hover:font-semibold hover:bg-white transition-colors bg-white/50"
+					className="inline-block w-24 text-center py-2 border-black border-y-2 hover:bg-sky-500 hover:border-sky-800 hover:text-white  transition-colors bg-white/50"
 				>
 					Socials
 				</Link>
 				<Link
 					href="/contact"
-					className="flex-1 text-center border-r-2 border-y-2 border-black rounded-r-lg py-2  hover:font-semibold hover:bg-white transition-colors bg-white/50"
+					className="inline-block w-24 text-center border-r-2 border-y-2 border-black rounded-r-lg py-2  hover:bg-sky-500 hover:border-sky-800 hover:text-white transition-colors bg-white/50"
 				>
 					Contact
 				</Link>
 			</motion.nav>
-
-			{/* Title that stays below nav and fades in on scroll */}
-			<motion.div
-				className="text-4xl font-bold p-3 mt-2"
-				style={{ opacity: titleOpacity }}
-			>
-				<h1>Skyler Riley</h1>
-				<h2>Software Consultant</h2>
-			</motion.div>
 		</div>
 	);
 }

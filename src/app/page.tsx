@@ -5,9 +5,9 @@ import Link from "next/link";
 
 export default function Home() {
 	return (
-		<div className="flex flex-col p-1 sm:p-3 relative min-h-screen">
+		<div className="flex flex-col  sm:p-0 relative min-h-screen">
 			{/* Logo fixed in viewport */}
-			<div className="fixed flex pointer-events-none  sm:top-2 sm:left-2 justify-between w-full  h-full   z-50">
+			<div className="fixed flex pointer-events-none   sm:top-2 sm:left-2 justify-between w-full  h-full   z-50">
 				<div>
 					<Image
 						src="/logo.svg"

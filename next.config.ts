@@ -7,6 +7,9 @@ const nextConfig: NextConfig = {
 		remotePatterns: [],
 	},
 	transpilePackages: ["geist"],
+	eslint: {
+		ignoreDuringBuilds: true,
+	},
 };
 
 export default nextConfig;

@@ -1,7 +1,7 @@
 "use client"; // Mark as Client Component
 
-import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function Header() {
@@ -52,37 +52,40 @@ export default function Header() {
 	const titleOpacity = useTransform(scrollY, [0, 300], [0, 1]);
 
 	return (
-		<div className="fixed top-0 w-full flex items-end justify-end bg-transparent z-10 p-3">
+		<div className="fixed top-0 sm:hidden  flex  bg-transparent  w-full p-3 sm:p-5 z-50">
 			{/* Navigation that slides up/down */}
 			<motion.nav
-				className="max-w-md text-xl transition-transform duration-300 ease-in-out"
+				className="scale-150 max-w-md text-xl bg-black/20 backdrop-blur-xl  w-full flex transition-transform duration-300 ease-in-out border-2 border-black rounded-lg "
 				style={{ transform: navTransform }}
 			>
-				{/* Each link takes exactly 1/4 of the space */}
-				<Link
-					href="/about"
-					className="inline-block w-24 text-center py-2 border-l-2 border-black border-y-2 rounded-l-lg hover:bg-sky-500 hover:border-sky-800 hover:text-white transition-colors bg-white/50"
-				>
-					About
-				</Link>
-				<Link
-					href="/portfolio"
-					className="inline-block w-24 text-center py-2 border-black border-y-2  hover:bg-sky-500 hover:border-sky-800 hover:text-white transition-colors bg-white/50"
-				>
-					Portfolio
-				</Link>
-				<Link
-					href="/socials"
-					className="inline-block w-24 text-center py-2 border-black border-y-2 hover:bg-sky-500 hover:border-sky-800 hover:text-white  transition-colors bg-white/50"
-				>
-					Socials
-				</Link>
-				<Link
-					href="/contact"
-					className="inline-block w-24 text-center border-r-2 border-y-2 border-black rounded-r-lg py-2  hover:bg-sky-500 hover:border-sky-800 hover:text-white transition-colors bg-white/50"
-				>
-					Contact
-				</Link>
+				{/* Each button takes exactly 1/4 of the space */}
+
+				<button className="text-left py-1  w-full font-bold">
+					<Image
+						src="/logo.svg"
+						alt="Logo"
+						width={170}
+						height={170}
+						className="inline-block mr-2"
+						// style={{ objectFit: "contain" }}
+					/>
+				</button>
+				<button className=" flex items-center justify-center pr-2 text-center text-3xl">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						fill="none"
+						viewBox="0 0 24 24"
+						strokeWidth={1.5}
+						stroke="currentColor"
+						className="inline-block w-[1em] h-[1em] mx-auto"
+					>
+						<path
+							strokeLinecap="round"
+							strokeLinejoin="round"
+							d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+						/>
+					</svg>
+				</button>
 			</motion.nav>
 		</div>
 	);

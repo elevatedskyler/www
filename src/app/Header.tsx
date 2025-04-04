@@ -52,10 +52,10 @@ export default function Header() {
 	const titleOpacity = useTransform(scrollY, [0, 300], [0, 1]);
 
 	return (
-		<div className="fixed top-0 sm:hidden  flex  bg-transparent  w-full p-3 sm:p-5 z-50">
+		<div className="hidden fixed top-0 bg-transparent   w-full p-3 sm:p-5 z-50">
 			{/* Navigation that slides up/down */}
 			<motion.nav
-				className="scale-150 max-w-md text-xl bg-black/20 backdrop-blur-xl  w-full flex transition-transform duration-300 ease-in-out border-2 border-black rounded-lg "
+				className="scale-150  text-xl bg-black/20 backdrop-blur-xl  w-full flex transition-transform duration-300 ease-in-out border-2 border-black rounded-lg "
 				style={{ transform: navTransform }}
 			>
 				{/* Each button takes exactly 1/4 of the space */}

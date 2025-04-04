@@ -7,6 +7,10 @@ import Header from "./Header";
 export const metadata: Metadata = {
 	title: "Skyler Riley",
 	description: "",
+	icons: {
+		icon: "/favicon.png",
+		apple: "/favicon.png",
+	},
 };
 
 export default function RootLayout({

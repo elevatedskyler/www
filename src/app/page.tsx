@@ -20,7 +20,7 @@ export default function Home() {
 							backgroundRepeat: "repeat",
 							backgroundSize: "300px 300px",
 						}}
-					></div>
+					/>
 				</div>
 
 				{/* Logo section - now relative instead of absolute */}
@@ -99,6 +99,63 @@ export default function Home() {
 						</div>
 					</div>
 				</div>
+			</div>
+			<div className="h-screen p-3 flex flex-col items-center justify-center bg-gradient-to-b from-[#CBBD93] to-cyan-400">
+				{/* Grain overlay for this section only */}
+				<div className="absolute inset-0 w-full h-full pointer-events-none z-20">
+					<div
+						className="w-full h-full opacity-80"
+						style={{
+							backgroundImage:
+								"url('data:image/svg+xml,%3Csvg viewBox=%220 0 100 100%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%224%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E')",
+							backgroundRepeat: "repeat",
+							backgroundSize: "300px 300px",
+						}}
+					/>
+				</div>
+				<form
+					className="flex z-30 flex-col items-center justify-center w-full max-w-xl p-2 border-2 border-black rounded-md bg-stone-50 shadow-[4px_4px_0_0_black] h-full max-h-[80vh]"
+					action="https://formspree.io/f/xjkyaqqb"
+					method="POST"
+				>
+					<h2 className="text-2xl sm:text-4xl font-bold text-left w-full px-3 pt-3">
+						Contact Me
+					</h2>
+					<div className="rounded-t-md  px-3 pb-1.5 pt-2.5     w-full">
+						<label
+							htmlFor="name"
+							className="block text-xs font-medium text-gray-900"
+						>
+							Email
+						</label>
+						<input
+							id="name"
+							name="name"
+							type="text"
+							placeholder="email@example.com"
+							className="block w-full bg-transparent text-gray-900 placeholder:text-gray-400 focus:outline focus:outline-0 sm:text-xl font-semibold "
+						/>
+					</div>
+					<div className=" px-3 pb-1.5 pt-2.5 w-full flex-1 flex flex-col">
+						<label
+							htmlFor="message"
+							className="block text-xs font-medium text-gray-900"
+						>
+							Message
+						</label>
+						<textarea
+							id="message"
+							name="message"
+							className="block w-full h-40 min-h-[200px] flex-1 text-gray-900 placeholder:text-gray-400 focus:outline bg-transparent focus:outline-0 sm:text-xl font-semibold resize-none"
+						/>
+					</div>
+					<button
+						className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg font-semibold ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-10 border-[3px] border-[#8f403b] bg-[#FF746C] p-6 px-6 text-2xl text-white  transition-transform hover:-translate-x-0.5 hover:-translate-y-0.5 hover:transform w-full "
+						type="submit"
+					>
+						Send
+					</button>
+				</form>
 			</div>
 		</div>
 	);

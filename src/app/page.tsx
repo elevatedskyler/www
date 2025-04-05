@@ -42,7 +42,7 @@ export default function Home() {
 				{/* Main content section */}
 				<div className="flex-1 flex items-center justify-center px-3">
 					<div className="flex flex-col sm:flex-row justify-between items-center gap-8 w-full max-w-5xl z-30">
-						<div className="flex flex-col justify-between self-stretch vertical-align-middle">
+						<div className="flex flex-col justify-between self-stretch ">
 							<span className="text-black uppercase text-3xl  sm:text-4xl font-bold">
 								I craft
 								<br />
@@ -58,13 +58,35 @@ export default function Home() {
 								<br />
 								that bring ideas to life online and beyond.
 							</span>
-
-							<Link
-								href="https://calendly.com/skyler-riley/30min"
-								className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg font-semibold ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-10 border-[3px] border-[#8f403b] bg-[#FF746C] p-6 px-6 text-2xl text-white shadow-[4px_4px_0_0_#8f403b] transition-transform hover:-translate-x-0.5 hover:-translate-y-0.5 hover:transform w-auto"
-							>
-								Book Consultation
-							</Link>
+							<div className="flex flex-col sm:flex-row gap-3 sm:gap-10 items-center justify-between">
+								<Link
+									href="https://calendly.com/skyler-riley/30min"
+									className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg font-semibold ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-10 border-[3px] border-[#8f403b] bg-[#FF746C] p-6 px-6 text-2xl text-white shadow-[4px_4px_0_0_#8f403b] transition-transform hover:-translate-x-0.5 hover:-translate-y-0.5 hover:transform w-full sm:flex-1"
+								>
+									Book Consultation
+								</Link>
+								<Link
+									href="/portfolio"
+									className="text-white text-2xl text-shadow-lg flex items-center gap-2"
+								>
+									Explore Portfolio
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="24"
+										height="24"
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="currentColor"
+										strokeWidth="2"
+										strokeLinecap="round"
+										strokeLinejoin="round"
+										className="inline-block ml-1"
+									>
+										<path d="M5 12h14"></path>
+										<path d="m12 5 7 7-7 7"></path>
+									</svg>
+								</Link>
+							</div>
 						</div>
 						<div className="h-48 w-48 md:h-64 md:w-64 lg:h-80 lg:w-80 overflow-hidden flex-shrink-0 relative z-30 border-white border-8">
 							<Image

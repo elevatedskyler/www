@@ -6,26 +6,7 @@ import { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function Home() {
-	const logoContainerRef = useRef(null);
-	const [isFixed, setIsFixed] = useState(false);
-
 	// Function to handle scroll and determine if logo should be fixed
-	useEffect(() => {
-		const handleScroll = () => {
-			if (logoContainerRef.current) {
-				const rect = logoContainerRef.current.getBoundingClientRect();
-				// When the top of the container reaches the top of the viewport, make it fixed
-				if (rect.top <= 0 && !isFixed) {
-					setIsFixed(true);
-				} else if (rect.top > 0 && isFixed) {
-					setIsFixed(false);
-				}
-			}
-		};
-
-		window.addEventListener("scroll", handleScroll);
-		return () => window.removeEventListener("scroll", handleScroll);
-	}, [isFixed]);
 
 	return (
 		<div className="flex flex-col   relative min-h-screen">
@@ -47,7 +28,7 @@ export default function Home() {
 				</div>
 
 				{/* Logo section that will become fixed */}
-				<div ref={logoContainerRef} className="flex z-30">
+				<div className="flex z-30">
 					{/* The original logo in its normal position */}
 					<div className="flex flex-col items-center">
 						<Image
